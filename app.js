@@ -3,6 +3,12 @@ const app = express()
 const tasks = require('./routes/task')
 const port = 5000
 
+//middleware
+
+
+
+
+//routes
 app.get('/hello', (req, res) => {
     res.send('Đây là trang home')
 })
