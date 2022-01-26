@@ -1,10 +1,10 @@
+const asyncWrapper = require('../middleware/async')
 const Task = require('../models/Task')
 
-module.exports = async (req, res) => {
-    try {
-        const task = await Task.find({})
-        res.status(201).json(task)
-    } catch (error) {
+// console.log(asyncWrapper)
 
-    }
-}
+module.exports = asyncWrapper(async (req, res) => {
+    const tasks = await Task.find({})
+    res.status(200).json({ tasks })
+
+})
